@@ -131,7 +131,10 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Discover new artists</title>
+        <title>
+          Playlist Studio - Discover new music and create perfect Spotify
+          playlists
+        </title>
         <meta
           name='description'
           content='Create a Spotify playlist with new music, inspired by what you already like.'
