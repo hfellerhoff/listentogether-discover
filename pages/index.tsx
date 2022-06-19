@@ -208,7 +208,7 @@ export default function Home() {
             )}
           </>
         ) : (
-          <Center>
+          <Center mt={4}>
             <Link href={API.Routes.authLogin.get()}>
               <Button as='a' size='lg' cursor='pointer' colorScheme='green'>
                 Login with Spotify
