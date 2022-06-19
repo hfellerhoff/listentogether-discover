@@ -7,6 +7,7 @@ import {
   AlertDescription,
   AlertIcon,
   AlertTitle,
+  Box,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 
@@ -29,7 +30,7 @@ const FilterCheckboxGroup = ({
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <Box>
       {count > max && (
         <Alert status='error' mb={4} variant='left-accent'>
           <AlertIcon />
@@ -55,12 +56,11 @@ const FilterCheckboxGroup = ({
             'repeat(5, 1fr)',
           ]}
           gap={2}
-          mb={8}
         >
           {options.map((option) => (
             <Checkbox
               value={option.value}
-              key={`checkbox-${option}`}
+              key={`checkbox-${option.value}`}
               overflow='hidden'
               whiteSpace='nowrap'
               textOverflow='ellipsis'
@@ -70,7 +70,7 @@ const FilterCheckboxGroup = ({
           ))}
         </Grid>
       </CheckboxGroup>
-    </>
+    </Box>
   );
 };
 

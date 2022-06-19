@@ -1,7 +1,12 @@
 import { Tr, Td, Box, Heading, Text, Grid } from '@chakra-ui/react';
 import useSpotifyAuthentication from 'hooks/useSpotifyAuthentication';
 import Spotify from 'spotify-web-api-js';
-import { PlayIcon, PauseIcon } from '@radix-ui/react-icons';
+import {
+  PlayIcon,
+  PauseIcon,
+  HeartIcon,
+  HeartFilledIcon,
+} from '@radix-ui/react-icons';
 
 import Image from 'next/image';
 import { useState } from 'react';
@@ -10,9 +15,10 @@ type Props = {
   number: number;
   track: SpotifyApi.TrackObjectFull;
   spotify: Spotify.SpotifyWebApiJs;
+  isSaved: boolean;
 };
 
-export function PlaylistTableRow({ number, track, spotify }: Props) {
+export function PlaylistTableRow({ number, track, spotify, isSaved }: Props) {
   const { ACCESS_TOKEN } = useSpotifyAuthentication();
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -96,6 +102,7 @@ export function PlaylistTableRow({ number, track, spotify }: Props) {
       <Td>
         <Text noOfLines={1}>{track.album.name}</Text>
       </Td>
+      <Td>{isSaved ? <HeartFilledIcon color='#1CD760' /> : <HeartIcon />}</Td>
     </Tr>
   );
 }
