@@ -44,7 +44,7 @@ const FilterCheckboxGroup = ({
         colorScheme='green'
         onChange={(v) => {
           setCount(v.length);
-          onUpdate(v);
+          onUpdate(v as any);
         }}
         defaultValue={defaultOptions}
       >
