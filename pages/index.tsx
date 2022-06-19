@@ -1,9 +1,7 @@
 import API from '@/lib/api';
 import { Box, Button, Center, Heading, Text } from '@chakra-ui/react';
 import Head from 'next/head';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import styles from '../styles/Home.module.css';
 import Spotify from 'spotify-web-api-js';
 import { useEffect, useState } from 'react';
 import PlaylistTable from 'components/PlaylistTable';
@@ -209,11 +207,15 @@ export default function Home() {
           </>
         ) : (
           <Center mt={4}>
-            <Link href={API.Routes.authLogin.get()}>
-              <Button as='a' size='lg' cursor='pointer' colorScheme='green'>
-                Login with Spotify
-              </Button>
-            </Link>
+            <Button
+              as='a'
+              size='lg'
+              cursor='pointer'
+              colorScheme='green'
+              href={API.Routes.authLogin.get()}
+            >
+              Login with Spotify
+            </Button>
           </Center>
         )}
       </Box>
