@@ -13,14 +13,13 @@ export default class Document extends NextDocument {
               async
               defer
               data-website-id='fb58a977-885c-4dc9-a5d8-425e4de59f84'
-              src='https://umami.henryfellerhoff.com/umami.js'
+              src='https://umami.henryfellerhoff.com/script.js'
             ></script>
           ) : (
             <></>
           )}
         </Head>
         <body>
-          {/* 👇 Here's the script */}
           <ColorModeScript />
           <Main />
           <NextScript />
